@@ -1,0 +1,22 @@
+{
+  "name": "sanbercodeqa-kelompok9",
+  "version": "1.0.0",
+  "description": "tugas final kelompok 9",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Denise-19/SanbercodeQA-Kelompok9.git"
+  },
+  "author": "kelompok9sanber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Denise-19/SanbercodeQA-Kelompok9/issues"
+  },
+  "homepage": "https://github.com/Denise-19/SanbercodeQA-Kelompok9#readme",
+  "devDependencies": {
+    "cypress": "^12.13.0"
+  }
+}
