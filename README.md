@@ -9,4 +9,5 @@
 <li>Wiridho Partuaon Tambunan  (Test Case D)</li>
 </ul>
 
-link Test Plan Documment: xxxx
+link Test Plan Documment: 
+https://docs.google.com/spreadsheets/d/1lJlrlOfncaWHofUa0rmial2m4IaF-o6e3SaWXOJTVQo/edit?usp=sharing
