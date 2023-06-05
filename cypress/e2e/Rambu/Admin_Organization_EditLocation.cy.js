@@ -3,7 +3,7 @@ const loginData = require("../../fixtures/orangedemo/habibi.json");
 
 describe('Organization-Edit Location', () => {
 	const BaseLogin = new baseLogin();
-	it('TC0_B07 : Successfully Edit Location', () => {
+	it('TC_B07 : Successfully Edit Location', () => {
 	  	// Visit the URL
 		cy.visit("https://opensource-demo.orangehrmlive.com/");
 		
@@ -26,7 +26,7 @@ describe('Organization-Edit Location', () => {
 		cy.get('.oxd-toast').should('contain','Successfully Updated');
 	});
   
-	it('TC0_B08 : Failed Edit Location', () => {
+	it('TC_B08 : Failed Edit Location', () => {
 	  // Visit the URL
 		cy.visit("https://opensource-demo.orangehrmlive.com/");
 		
