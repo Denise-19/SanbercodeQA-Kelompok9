@@ -4,8 +4,8 @@
 ### Nama Anggota Kelompok : 
 <ul>
 <li>Muhammad R Habibi (Test Case A)</li>
-<li>Denise Gratia Aruan (Test Case B)</li>
-<li>Rambu Cyntia Verolita (Test Case C)</li>
+<li>Rambu Cyntia Verolita (Test Case B)</li>
+<li>Denise Gratia Aruan (Test Case C)</li>
 <li>Wiridho Partuaon Tambunan  (Test Case D)</li>
 </ul>
 
