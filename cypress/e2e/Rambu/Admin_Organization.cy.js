@@ -3,7 +3,7 @@ const loginData = require("../../fixtures/orangedemo/habibi.json");
 
 describe('Organization-Location', () => {
 	const BaseLogin = new baseLogin();
-	it('TC_B02 : Seacrh Valid Location', () => { 
+	it('TC_B01 : Seacrh Valid Location', () => { 
 		// Visit the URL
 		cy.visit("https://opensource-demo.orangehrmlive.com/");
 		
