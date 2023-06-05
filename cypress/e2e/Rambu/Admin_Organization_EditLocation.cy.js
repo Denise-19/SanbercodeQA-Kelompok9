@@ -15,9 +15,8 @@ describe('TC0_B07 : Successfully Edit Location', () => {
 		cy.get('.oxd-table-filter-header-title > .oxd-text').should('contain','Locations')
 
 		// Edit Location
-		cy.get(':nth-child(6) > .oxd-table-row > :nth-child(7) > .oxd-table-cell-actions > :nth-child(2) > .oxd-icon').click() // click Edit 
-		cy.get(':nth-child(1) > .oxd-grid-2 > .oxd-grid-item > .oxd-input-group > :nth-child(2) > .oxd-input').type('Waingapu1')
-		cy.get(':nth-child(5) > .oxd-input-group > :nth-child(2) > .oxd-input').type('081234567890')
+		cy.get(':nth-child(11) > .oxd-table-row > :nth-child(7) > .oxd-table-cell-actions > :nth-child(2) > .oxd-icon').click({force:true}) // click Edit 
+		cy.get(':nth-child(1) > .oxd-grid-2 > .oxd-grid-item > .oxd-input-group > :nth-child(2) > .oxd-input').type('edit')
 		cy.get('.oxd-button--secondary').click() //click Save Button
 		cy.get('.oxd-toast').should('contain','Successfully Updated')
 	})
@@ -40,7 +39,7 @@ describe('TC0_B07 : Successfully Edit Location', () => {
 		cy.get('.oxd-table-filter-header-title > .oxd-text').should('contain','Locations')
 		
 		// Edit Location
-		cy.get(':nth-child(5) > .oxd-table-row > :nth-child(7) > .oxd-table-cell-actions > :nth-child(2)').click()
+		cy.get(':nth-child(5) > .oxd-table-row > :nth-child(7) > .oxd-table-cell-actions > :nth-child(2)').click({force:true})
 		cy.get(':nth-child(1) > .oxd-grid-2 > .oxd-grid-item > .oxd-input-group > :nth-child(2) > .oxd-input').clear()
 		cy.get('.oxd-button--secondary').click()
 		cy.get(':nth-child(1) > .oxd-grid-2 > .oxd-grid-item > .oxd-input-group > .oxd-text').should('contain','Required')
