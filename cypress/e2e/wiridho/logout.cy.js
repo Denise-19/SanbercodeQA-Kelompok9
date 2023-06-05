@@ -1,7 +1,7 @@
 const loginData = require("../../fixtures/orangeHRM/login.json");
 
 describe("Logout", () => {
-  it.only("Success Logout", () => {
+  it.only("TC_D04 : Logout Successfully", () => {
     cy.visit(
       "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     );
