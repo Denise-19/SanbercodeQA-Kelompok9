@@ -20,12 +20,14 @@ class baseLogin {
 	// verivy
 	trueVerify = ".oxd-brand-banner > img";
 	successSave = ".orangehrm-edit-employee-content > :nth-child(1) > .oxd-text--h6";
-
+	required = ".--name-grouped-field > :nth-child(1) > .oxd-text";
 	searchInput = ':nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-autocomplete-wrapper > .oxd-autocomplete-text-input > input';
 	searchButton = 'Search';
 	deleteButton = '.oxd-table-cell-actions > :nth-child(1) > .oxd-icon';
 	confirmDeleteButton = '.oxd-button--label-danger';
+	confirmCancelDeleteButton = '.oxd-button--text';
 	deletionMessage = 'Successfully Deleted';
+	invalidSearch = 'No Records Found';
 
 	//ACTIONS
 	// input
@@ -45,6 +47,15 @@ class baseLogin {
 		cy.get(this.middleName).should("be.visible").type(middleName);
 	}
 	inputLastName(lastName){
+		cy.get(this.lastName).should("be.visible").type(lastName);
+	}
+	inputInvalidFirstName(firstName){
+		cy.get(this.firstName).should("be.visible").type(firstName);
+	}
+	inputInvalidMiddleName(middleName){
+		cy.get(this.middleName).should("be.visible").type(middleName);
+	}
+	inputInvalidLastName(lastName){
 		cy.get(this.lastName).should("be.visible").type(lastName);
 	}
 
@@ -69,10 +80,16 @@ class baseLogin {
 		cy.contains(this.searchButton).click({ force: true });
 	}
 	clickDeleteEmployee() {
-	cy.get(this.deleteButton).each(($el) => {
-		cy.wrap($el).click({ force: true });
-	});
+		cy.get(this.deleteButton).each(($el) => {
+			cy.wrap($el).click({ force: true });
+		})
 	cy.get(this.confirmDeleteButton).click({ force: true });
+	}
+	ClickCancelDeleteEmplyoyee(){
+		cy.get(this.deleteButton).each(($el) => {
+			cy.wrap($el).click({ force: true });
+		})
+	cy.get(this.confirmCancelDeleteButton).click({ force: true });
 	}
 	get(selector) {
 		return cy.get(selector);
@@ -86,7 +103,15 @@ class baseLogin {
 		cy.get(this.successSave).should("be.visible");
 	}
 	verifyDeletionMessage() {
-	cy.contains(this.deletionMessage);
+		cy.contains(this.deletionMessage);
+	}
+	verifyInvalidSearch() {
+		cy.contains(this.invalidSearch);
+	}
+
+	//validation
+	requiredValidation(){
+		cy.get(this.required).should("be.visible");
 	}
 	
 

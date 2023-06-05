@@ -12,5 +12,3 @@
 link Test Plan Documment: 
 https://docs.google.com/spreadsheets/d/1lJlrlOfncaWHofUa0rmial2m4IaF-o6e3SaWXOJTVQo/edit?usp=sharing
 
-link Capture Hasil 
-https://drive.google.com/drive/folders/13Fwel5VeDrmDdLNSzRRj7x8q1hhmn4X2?usp=sharing
