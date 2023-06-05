@@ -1,27 +1,84 @@
-describe('TB02_05: Add Employee', () => {
+import baseLogin from "../../support/PageObject/POM-denise.cy";
+const loginData = require("../../fixtures/orangedemoDenise/denise.json");
+
+describe('TC_C06: Input Valid Value Employee', () => {
+	const BaseLogin = new baseLogin();
 	it('passes', () => { 
 		// Visit the URL
 		cy.visit("https://opensource-demo.orangehrmlive.com/");
 		
 		// Log in as admin
-		cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Admin');
-		cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin123');
-		cy.get('.oxd-button').click()
+		BaseLogin.inputUserName(loginData.validEmail);
+		BaseLogin.inputPassword(loginData.validPassword);
+		BaseLogin.clickLogin();
+		BaseLogin.verify();
 
 		// Go to PIM menu
-		cy.get(':nth-child(2) > .oxd-main-menu-item').click()
-        
+		BaseLogin.clickMenuPIM();
+
 		// Add Employee
-		cy.get(':nth-child(3) > .oxd-topbar-body-nav-tab-item').click()
-        cy.get('.--name-grouped-field > :nth-child(1) > :nth-child(2) > .oxd-input').type('Denise');
-        cy.get(':nth-child(2) > :nth-child(2) > .oxd-input').type('Gratia');
-        cy.get(':nth-child(3) > :nth-child(2) > .oxd-input').type('Aruan');
+		BaseLogin.clickAddEmployee();
+		BaseLogin.inputFirstName(loginData.firstName);
+		BaseLogin.inputMiddleName(loginData.middleName);
+		BaseLogin.inputLastName(loginData.lastName);
 
         //save
-        cy.get('.oxd-button--secondary').click({ force: true });
-        cy.wait(8000);
-        cy.get('.orangehrm-edit-employee-content > :nth-child(1) > .oxd-text--h6').should('contain.text', 'Personal Details');
-        // cy.get('.orangehrm-edit-employee-content > :nth-child(1) > .oxd-text--h6')
+		BaseLogin.clickSaveEmployee();
+		BaseLogin.verifySaveSuccess();
 	})
   })
+
+  describe('TC_C07: Blank Filed Employee Name', () => {
+	const BaseLogin = new baseLogin();
+	it('passes', () => { 
+		// Visit the URL
+		cy.visit("https://opensource-demo.orangehrmlive.com/");
+		
+		// Log in as admin
+		BaseLogin.inputUserName(loginData.validEmail);
+		BaseLogin.inputPassword(loginData.validPassword);
+		BaseLogin.clickLogin();
+		BaseLogin.verify();
+
+		// Go to PIM menu
+		BaseLogin.clickMenuPIM();
+
+		// Add Employee
+		BaseLogin.clickAddEmployee();
+
+        //save
+		BaseLogin.clickSaveEmployee();
+		BaseLogin.requiredValidation();
+	
+	})
+  })
+
+  describe.only('TC_C08: Input Invalid Value Employee', () => {
+	const BaseLogin = new baseLogin();
+	it('passes', () => { 
+		// Visit the URL
+		cy.visit("https://opensource-demo.orangehrmlive.com/");
+		
+		// Log in as admin
+		BaseLogin.inputUserName(loginData.validEmail);
+		BaseLogin.inputPassword(loginData.validPassword);
+		BaseLogin.clickLogin();
+		BaseLogin.verify();
+
+		// Go to PIM menu
+		BaseLogin.clickMenuPIM();
+
+		// Add Employee
+		BaseLogin.clickAddEmployee();
+		BaseLogin.inputFirstName(loginData.invalidfirstName);
+		BaseLogin.inputMiddleName(loginData.invalidmiddleName);
+		BaseLogin.inputLastName(loginData.invalidlastName);
+		
+		//save
+		BaseLogin.clickSaveEmployee();
+		BaseLogin.verifySaveSuccess();
+	})
+  })
+
+
   

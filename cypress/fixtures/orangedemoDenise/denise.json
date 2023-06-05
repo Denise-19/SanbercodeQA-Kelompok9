@@ -1,0 +1,13 @@
+{
+    "validEmail" : "Admin",
+    "validPassword" : "admin123", 
+    "employeeId" : "0204",
+    "invalidEmployeeId" : "0000",
+    "firstName" : "Denise",
+    "middleName" : "Gratia",
+    "lastName" : "Aruan",
+    "invalidfirstName" : "123",
+    "invalidmiddleName" : "123",
+    "invalidlastName" : "123",
+    "name" : "Hope"
+}
