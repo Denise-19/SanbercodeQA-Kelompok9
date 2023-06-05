@@ -11,7 +11,7 @@ describe('TB02_03: List Employee', () => {
 		// Go to PIM menu
 		cy.get(':nth-child(2) > .oxd-main-menu-item').click()
         cy.get('.orangehrm-container').scrollIntoView();
-		// Input Country
+		
 		
 	})
   })
@@ -31,7 +31,7 @@ describe('TB02_03: List Employee', () => {
         cy.get(':nth-child(2) > .oxd-input').type('EMP0001');
         cy.get('.oxd-form-actions > .oxd-button--secondary').click({ force: true });
         
-		// Input Country
+		
 		
 	})
   })
