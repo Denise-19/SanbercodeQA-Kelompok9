@@ -1,4 +1,4 @@
-describe('TC03_01 : Seacrh Valid Location', () => {
+describe('TC0_B01 : Seacrh Valid Location', () => {
 	it('passes', () => { 
 		// Visit the URL
 		cy.visit("https://opensource-demo.orangehrmlive.com/");
@@ -23,7 +23,7 @@ describe('TC03_01 : Seacrh Valid Location', () => {
 	})
   })
   
-  describe('TC03_02 : Seacrh Unvalid Location', () => {
+  describe('TC_B02 : Seacrh Unvalid Location', () => {
 		it('passes', () => {
 		// Visit the URL
 		cy.visit("https://opensource-demo.orangehrmlive.com/");
@@ -48,7 +48,7 @@ describe('TC03_01 : Seacrh Valid Location', () => {
 	})
   })
   
-  describe('TC03_03 : Verify Reset Button', () => {
+  describe('TC_B03 : Verify Reset Button', () => {
 	it('passes', () => {
 	  	// Visit the URL
 		cy.visit("https://opensource-demo.orangehrmlive.com/");
