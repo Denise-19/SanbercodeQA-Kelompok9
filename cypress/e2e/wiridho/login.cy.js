@@ -4,7 +4,7 @@ const loginData = require("../../fixtures/orangeHRM/login.json");
 describe("Login Functionality", () => {
   const BASE_LOGIN = new baseLogin();
   context("Login Success", () => {
-    it("TC-D01 : Sukses Login dengan valid credential", () => {
+    it("TC_D01 : Sukses Login dengan valid credential", () => {
       cy.visit(
         "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
       );
@@ -12,7 +12,7 @@ describe("Login Functionality", () => {
     });
   });
   context("Login Failure", () => {
-    it("TC-D02 : Login gagal (Wrong username)", () => {
+    it("TC_D02 : Login gagal (Wrong username)", () => {
       cy.visit(
         "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
       );
@@ -21,7 +21,7 @@ describe("Login Functionality", () => {
       BASE_LOGIN.clickLogin();
       BASE_LOGIN.showErrorAlert();
     });
-    it("TC-D03 : Login gagal (Input blank data)", () => {
+    it("TC_D03 : Login gagal (Input blank data)", () => {
       cy.visit(
         "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
       );
