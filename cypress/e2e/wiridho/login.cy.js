@@ -8,10 +8,7 @@ describe("Login Functionality", () => {
       cy.visit(
         "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
       );
-      BASE_LOGIN.inputEmail(loginData.validEmail);
-      BASE_LOGIN.inputPassword(loginData.validPassword);
-      BASE_LOGIN.clickLogin();
-      BASE_LOGIN.verifyDashboard();
+      cy.login(loginData.validEmail, loginData.validPassword);
     });
   });
   context("Login Failure", () => {
