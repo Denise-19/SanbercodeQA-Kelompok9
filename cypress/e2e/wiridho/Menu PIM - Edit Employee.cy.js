@@ -26,12 +26,12 @@ describe("Menu PIM - Edit Employee", () => {
     );
     cy.menuPIM();
     ACTION_EDIT.clickEdit();
-    ACTION_EDIT.inputName(
+    ACTION_EDIT.inputNameBlank(
       dataEmployee.blankFirstName,
       dataEmployee.middleName,
       dataEmployee.blankLastName,
       dataEmployee.nickName
     );
-    ACTION_EDIT.formValidation;
+    ACTION_EDIT.formValidation();
   });
 });

@@ -34,15 +34,18 @@ class actionEditEmployee {
   }
 
   inputName(firstName, middleName, lastName, nickName) {
-    // if (firstName !== "") {
     cy.get(this.firstName).type(firstName);
-    // }
-    // if (lastName !== "") {
     cy.get(this.lastName).type(lastName);
-    // }
     cy.get(this.middleName).type(middleName);
     cy.get(this.nickName).type(nickName);
   }
+  inputNameBlank(firstName, middleName, lastName, nickName) {
+    cy.get(this.firstName).clear();
+    cy.get(this.lastName).clear();
+    cy.get(this.middleName).type(middleName);
+    cy.get(this.nickName).type(nickName);
+  }
+
   clickSave() {
     cy.get(this.saveButton).click();
   }
@@ -52,7 +55,7 @@ class actionEditEmployee {
   }
 
   formValidation() {
-    cy.get(this.required).should('contain.text", "Required');
+    cy.get(this.required).contains("Required").should("be.visible");
   }
 }
 
