@@ -1,5 +1,0 @@
-{
-    "validEmail" : "Admin",
-    "validPassword" : "admin123", 
-    "wrongEmail" : "notme"
-}

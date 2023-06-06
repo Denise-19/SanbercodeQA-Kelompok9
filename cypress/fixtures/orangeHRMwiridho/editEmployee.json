@@ -1,0 +1,13 @@
+{
+    "firstName" : "Dwayne",
+    "middleName" : "Caroline", 
+    "lastName" : "Johnson", 
+    "nickName" : "John",
+    "driverLicenseNumebr" : "9999999",
+    "gender" : "male",
+    "maritalStatus": "Sigle",
+    "blankFirstName": "",
+    "blankLastName": ""
+
+}
+

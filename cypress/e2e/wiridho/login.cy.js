@@ -1,5 +1,5 @@
-import baseLogin from "../../support/PageObject/loginPage.cy";
-const loginData = require("../../fixtures/orangeHRM/login.json");
+import baseLogin from "../../support/PageObject/login-wiridho.cy";
+const loginData = require("../../fixtures/orangeHRMwiridho/login.json");
 
 describe("Login Functionality", () => {
   const BASE_LOGIN = new baseLogin();
@@ -8,7 +8,8 @@ describe("Login Functionality", () => {
       cy.visit(
         "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
       );
-      cy.login(loginData.validEmail, loginData.validPassword);
+      cy.login(loginData.validUsername, loginData.validPassword);
+      BASE_LOGIN.verifyDashboard();
     });
   });
   context("Login Failure", () => {
@@ -16,16 +17,14 @@ describe("Login Functionality", () => {
       cy.visit(
         "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
       );
-      BASE_LOGIN.inputEmail(loginData.wrongEmail);
-      BASE_LOGIN.inputPassword(loginData.validPassword);
-      BASE_LOGIN.clickLogin();
+      cy.login(loginData.wrongUsername, loginData.validPassword);
       BASE_LOGIN.showErrorAlert();
     });
     it("TC_D03 : Login gagal (Input blank data)", () => {
       cy.visit(
         "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
       );
-      BASE_LOGIN.clickLogin();
+      cy.login(loginData.blankUsername, loginData.blankPassword);
       BASE_LOGIN.showformValidation();
     });
   });
